@@ -124,7 +124,7 @@ export default function LandingPage() {
   }, []);
 
   useEffect(() => {
-    document.title = "RetireSahi | Your Retirement, Demystified";
+    document.title = "RetireReady | Modern Retirement Architecture";
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -272,7 +272,7 @@ export default function LandingPage() {
             <div className="w-10 h-10 bg-[#8B5CF6] border-2 border-[#1E293B] rounded-full flex items-center justify-center pop-shadow">
               <span className="font-heading font-extrabold text-white text-xl">R</span>
             </div>
-            <span className="font-heading font-extrabold text-2xl tracking-tight hidden sm:block">RetireSahi</span>
+            <span className="font-heading font-extrabold text-2xl tracking-tight hidden sm:block">RetireReady</span>
           </div>
           
           <div className="hidden md:flex gap-8 font-bold uppercase tracking-wide text-sm">
@@ -407,7 +407,7 @@ export default function LandingPage() {
             <div className="flex-1 w-full relative z-20">
               
               <div className="inline-block px-4 py-1.5 border-2 border-[#1E293B] bg-[#F472B6] text-white font-bold uppercase tracking-widest text-xs rounded-full mb-8 pop-shadow transform -rotate-2">
-                Your Retirement, Demystified.
+                Strategic Wealth Management.
               </div>
               
               <h1 className="font-heading font-extrabold text-[#1E293B] mb-6 relative z-10" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: 1.1 }}>
@@ -419,7 +419,7 @@ export default function LandingPage() {
               </h1>
               
               <p className="font-medium mb-10 text-[#1E293B]/80" style={{ fontSize: '1.125rem', lineHeight: 1.7, maxWidth: '600px' }}>
-                RetireSahi calculates your personalized retirement readiness score, shows you exactly how much to contribute, and tells you how much tax you're leaving on the table — all in under 2 minutes.
+                RetireReady architects your readiness index, quantifies your structural wealth deficit, and identifies the exact tax shield you're leaving on the table — in under 2 minutes.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 mb-8">
@@ -614,7 +614,7 @@ export default function LandingPage() {
                   lineHeight: 1.6,
                 }}
               >
-                We built RetireSahi on a simple principle — your financial data is none of our business.
+                We built RetireReady on a simple principle — your financial data is your fortress.
                 Here is exactly how we protect it.
               </p>
             </div>
@@ -637,7 +637,7 @@ export default function LandingPage() {
                 {
                   icon: '👁️',
                   title: 'We See Only Your Name',
-                  body: 'Even as RetireSahi administrators, we can only see your first name. Every financial figure is encrypted and invisible to us.',
+                  body: 'Even as RetireReady administrators, we can only see your first name. Every financial figure is encrypted and invisible to us.',
                   color: '#34D399',
                 },
                 {
@@ -756,7 +756,7 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-[#8B5CF6] border-2 border-white rounded-full flex items-center justify-center pop-shadow">
                 <span className="font-heading font-extrabold text-white text-2xl">R</span>
               </div>
-              <span className="font-heading font-extrabold text-3xl tracking-tight">RetireSahi</span>
+              <span className="font-heading font-extrabold text-3xl tracking-tight">RetireReady</span>
             </div>
             
             <div className="flex flex-wrap justify-center md:justify-end gap-8 font-bold uppercase tracking-wide text-sm">
@@ -769,7 +769,7 @@ export default function LandingPage() {
           </div>
           
           <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 font-bold uppercase tracking-widest text-xs">
-            <div>© 2025 RetireSahi. Built for India's retirement future.</div>
+            <div>© 2026 RetireReady. Architecture for a secure future.</div>
             <div className="flex items-center gap-2">
                Made with <Zap className="w-3" fill="currentColor" /> in India
             </div>

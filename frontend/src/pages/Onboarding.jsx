@@ -84,6 +84,8 @@ const Confetti = () => (
 
 const FinalScoreArc = ({ score = 82 }) => {
   const [offset, setOffset] = useState(283);
+  const scoreBandColor = getScoreBand(score).color || COLORS.emerald;
+
   useEffect(() => {
     const timeout = setTimeout(() => { setOffset(283 - (283 * (score / 100))); }, 300);
     return () => clearTimeout(timeout);
@@ -91,14 +93,14 @@ const FinalScoreArc = ({ score = 82 }) => {
 
   return (
     <div className="relative w-full aspect-square max-w-[320px] mx-auto flex items-center justify-center animate-scale-up">
-      <div className="absolute inset-0 bg-[#34D399] rounded-full mix-blend-multiply opacity-50 -translate-x-4 translate-y-4" />
+      <div className="absolute inset-0 rounded-full mix-blend-multiply opacity-50 -translate-x-4 translate-y-4" style={{ backgroundColor: scoreBandColor }} />
       <div className="relative z-10 w-full h-full bg-white border-4 border-[#1E293B] rounded-full p-8 flex flex-col items-center justify-center pop-shadow">
         <svg viewBox="0 0 100 100" className="w-full h-full absolute inset-0 -rotate-90 p-4 pb-0 overflow-visible">
            <circle cx="50" cy="50" r="45" fill="none" stroke="#F1F5F9" strokeWidth="8" strokeDasharray="283" strokeLinecap="round" />
            <circle 
-            cx="50" cy="50" r="45" fill="none" stroke={COLORS.emerald} strokeWidth="8" 
+            cx="50" cy="50" r="45" fill="none" stroke={scoreBandColor} strokeWidth="8" 
             strokeDasharray="283" strokeDashoffset={offset} strokeLinecap="round"
-            style={{ transition: 'stroke-dashoffset 1.5s cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+            style={{ transition: 'stroke-dashoffset 1.5s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.5s ease' }}
           />
         </svg>
         <div className="text-center relative z-20 mt-4">
@@ -164,7 +166,7 @@ const TaxProfileField = ({ label, name, value, max, step = 5000, onNumberChange,
       name={name}
       value={Math.max(0, Math.min(max, Number(value) || 0))}
       onChange={onSliderChange}
-      className="w-full h-2 bg-[#E2E8F0] border border-[#1E293B]/30 rounded-lg appearance-none cursor-pointer accent-[#8B5CF6]"
+      className="slider-memphis"
     />
     <div className="relative">
       <span className="absolute left-3 top-1/2 -translate-y-1/2 font-black text-[#1E293B]/50">₹</span>
@@ -346,7 +348,7 @@ export default function Onboarding() {
   const results = useMemo(() => calculateRetirement(parsedData), [parsedData]);
 
   useEffect(() => {
-    document.title = "RetireSahi | Onboarding";
+    document.title = "RetireReady | Wealth Readiness Assessment";
     if (step === 0) {
       const t = setTimeout(() => setStep(1), 1200);
       return () => clearTimeout(t);
@@ -462,7 +464,7 @@ export default function Onboarding() {
       {step === 0 && (
         <div className="z-10 text-center animate-fade-in flex flex-col items-center">
           <Loader2 className="w-12 h-12 animate-spin text-[#8B5CF6] mb-6" />
-          <h2 className="font-heading font-extrabold text-3xl">Setting things up for you...</h2>
+          <h2 className="font-heading font-extrabold text-3xl">System monitoring active. No anomalies reported. Ready.</h2>
         </div>
       )}
 
@@ -526,7 +528,7 @@ export default function Onboarding() {
                 )}
                 <div className="bg-[#FFFDF5] border-2 border-[#1E293B] p-4 rounded-xl flex gap-3 text-sm font-bold text-[#1E293B]/80 shadow-[2px_2px_0_0_#1E293B]">
                   <Sparkles className="w-5 h-5 text-[#FBBF24] shrink-0" />
-                  We use this to estimate your standard of living and retirement trajectory.
+                  We use this to model your standard of living and project your retirement trajectory.
                 </div>
               </div>
             )}
@@ -578,7 +580,7 @@ export default function Onboarding() {
                       setFormData({ ...formData, retireAge: parseInt(e.target.value, 10) });
                       clearErrorsForFields(['age', 'retireAge']);
                     }}
-                    className="w-full h-3 bg-[#E2E8F0] border-2 border-[#1E293B] rounded-lg appearance-none cursor-pointer accent-[#8B5CF6]"
+                    className="slider-memphis"
                   />
                   {errors.retireAge && (
                     <p className="mt-3 text-xs font-bold text-[#EF4444] uppercase tracking-wide">{errors.retireAge}</p>
@@ -646,7 +648,7 @@ export default function Onboarding() {
                       step="1"
                       value={Math.round((Number(formData.basicSalaryPct) || 0.4) * 100)}
                       onChange={(e) => setFormData({ ...formData, basicSalaryPct: Number(e.target.value) / 100 })}
-                      className="w-full h-2 bg-[#E2E8F0] border border-[#1E293B]/30 rounded-lg appearance-none cursor-pointer accent-[#8B5CF6]"
+                      className="slider-memphis"
                     />
                   </div>
 
@@ -712,13 +714,13 @@ export default function Onboarding() {
 
       {step === 9 && (
         <div className="z-10 animate-fade-in flex flex-col items-center">
-           <h2 className="font-heading font-extrabold text-3xl md:text-4xl mb-12 text-center leading-tight">Calculating your<br/>retirement score...</h2>
+           <h2 className="font-heading font-extrabold text-3xl md:text-4xl mb-12 text-center leading-tight">Calibrating your<br/>Readiness Index...</h2>
            <div className="space-y-6 w-full max-w-sm px-4">
              {[
                { idx: 0, text: 'Income analysis' },
                { idx: 1, text: 'NPS growth projection' },
-               { idx: 2, text: 'Inflation adjustment' },
-               { idx: 3, text: 'Lifestyle mapping' }
+               { idx: 2, text: 'Inflation modelling' },
+               { idx: 3, text: 'Wealth gap computation' }
              ].map(item => (
                 <div key={item.idx} className="flex items-center gap-4 animate-fade-in">
                   <div className={`w-8 h-8 shrink-0 rounded-full border-2 border-[#1E293B] flex items-center justify-center transition-colors duration-500 ${calcMsg >= item.idx ? 'bg-[#34D399] shadow-[2px_2px_0_0_#1E293B]' : 'bg-white'}`}>

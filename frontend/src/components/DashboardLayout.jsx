@@ -79,7 +79,7 @@ export default function DashboardLayout({ children, title, userData: passedUserD
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#FFFDF5] p-6">
         <div className="max-w-md w-full bg-white border-4 border-[#1E293B] rounded-2xl p-6 pop-shadow-pink space-y-4">
-          <h2 className="font-heading font-black text-xl uppercase tracking-widest text-[#1E293B]">Dashboard Unavailable</h2>
+          <h2 className="font-heading font-black text-xl uppercase tracking-widest text-[#1E293B]">Profile Unavailable</h2>
           <p className="text-sm font-bold text-[#1E293B]/70 leading-relaxed">{loadError}</p>
           <button
             onClick={() => window.location.reload()}
@@ -113,7 +113,7 @@ export default function DashboardLayout({ children, title, userData: passedUserD
         <aside className="fixed left-0 top-0 h-full w-60 bg-[#1E293B] z-40 hidden lg:flex flex-col p-6 overflow-hidden">
           <div className="flex items-center gap-3 mb-12 cursor-pointer" onClick={() => navigate('/dashboard')}>
             <div className="w-10 h-10 bg-[#8B5CF6] rounded-full border-2 border-white flex items-center justify-center font-heading font-extrabold text-white text-xl">R</div>
-            <span className="font-heading font-extrabold text-white text-xl uppercase tracking-widest">RetireSahi</span>
+            <span className="font-heading font-extrabold text-white text-xl uppercase tracking-widest">RetireReady</span>
           </div>
 
           <nav className="flex-1 space-y-4">
@@ -198,7 +198,7 @@ export default function DashboardLayout({ children, title, userData: passedUserD
                 <div className="flex items-center justify-between mb-10">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 bg-[#8B5CF6] rounded-full border-2 border-white flex items-center justify-center font-heading font-extrabold text-white">R</div>
-                    <span className="font-heading font-extrabold text-white tracking-widest">RetireSahi</span>
+                    <span className="font-heading font-extrabold text-white tracking-widest">RetireReady</span>
                   </div>
                   <button onClick={() => setIsMenuOpen(false)} className="text-white/40 hover:text-white">
                     <X className="w-6 h-6" />

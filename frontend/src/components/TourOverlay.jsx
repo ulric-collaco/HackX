@@ -317,7 +317,7 @@ export default function TourOverlay({ steps, onComplete, onSkip }) {
             onClick={onSkip}
             className="text-[10px] font-black uppercase tracking-widest text-white/30 hover:text-white/70 transition-colors px-2 py-1"
           >
-            Skip tour
+            Skip for now
           </button>
           <div className="flex gap-2">
             {currentStep > 0 && (
@@ -337,7 +337,7 @@ export default function TourOverlay({ steps, onComplete, onSkip }) {
               {currentStep < steps.length - 1 ? (
                 <>Next <ChevronRight className="w-4 h-4" /></>
               ) : (
-                <>Finish <span>🎉</span></>
+                <><span className="text-white">Finish</span> ✓</> 
               )}
             </button>
           </div>

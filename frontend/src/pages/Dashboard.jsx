@@ -143,7 +143,7 @@ export default function Dashboard() {
 
   // State checks and Auth logic
   useEffect(() => {
-    document.title = "RetireSahi | Dashboard";
+    document.title = "RetireReady | Wealth Intelligence";
     const unsub = onAuthStateChanged(auth, async (user) => {
       if (user) {
         const snap = await getDoc(doc(db, 'users', user.uid));
@@ -157,7 +157,7 @@ export default function Dashboard() {
             npsEquity: data.npsEquity || 50
           });
           // Auto-trigger tour on first visit
-          if (!localStorage.getItem('retiresahi_tour_seen')) {
+          if (!localStorage.getItem('retireready_tour_seen')) {
             setTimeout(() => setTourActive(true), 800);
           }
         } else {
@@ -273,12 +273,12 @@ export default function Dashboard() {
   };
 
   const handleTourComplete = () => {
-    localStorage.setItem('retiresahi_tour_seen', 'true');
+    localStorage.setItem('retireready_tour_seen', 'true');
     setTourActive(false);
   };
 
   const handleTourSkip = () => {
-    localStorage.setItem('retiresahi_tour_seen', 'true');
+    localStorage.setItem('retireready_tour_seen', 'true');
     setTourActive(false);
   };
 
@@ -343,7 +343,7 @@ export default function Dashboard() {
       <aside className={`fixed left-0 top-0 h-full bg-[#1E293B] z-40 hidden lg:flex flex-col overflow-hidden transition-all duration-300 ease-in-out ${isSidebarCollapsed ? 'w-24 p-4 items-center' : 'w-60 p-6'}`}>
          <div className="flex items-center gap-3 mb-12">
             <div className="w-10 h-10 shrink-0 bg-[#8B5CF6] rounded-full border-2 border-white flex items-center justify-center font-heading font-extrabold text-white text-xl">R</div>
-            {!isSidebarCollapsed && <span className="font-heading font-extrabold text-white text-xl uppercase tracking-widest whitespace-nowrap animate-fade-in">RetireSahi</span>}
+            {!isSidebarCollapsed && <span className="font-heading font-extrabold text-white text-xl uppercase tracking-widest whitespace-nowrap animate-fade-in">RetireReady</span>}
          </div>
 
          <nav className="flex-1 space-y-4 w-full">
@@ -457,7 +457,7 @@ export default function Dashboard() {
                   <div className="flex items-center justify-between mb-10">
                      <div className="flex items-center gap-3">
                         <div className="w-9 h-9 bg-[#8B5CF6] rounded-full border-2 border-white flex items-center justify-center font-heading font-extrabold text-white">R</div>
-                        <span className="font-heading font-extrabold text-white tracking-widest">RetireSahi</span>
+                        <span className="font-heading font-extrabold text-white tracking-widest">RetireReady</span>
                      </div>
                      <button onClick={() => setIsMenuOpen(false)} className="text-white/40 hover:text-white">
                         <X className="w-6 h-6" />
@@ -561,7 +561,7 @@ export default function Dashboard() {
                      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <div>
                          <div className="font-heading font-black text-2xl md:text-5xl text-[#1E293B] leading-none mb-2">
-                            {baseResults?.monthlyGap > 0 ? `${formatIndian(baseResults.monthlyGap)}/m more` : "You're all set! 🎉"}
+                            {baseResults?.monthlyGap > 0 ? `${formatIndian(baseResults.monthlyGap)}/m more` : "Sufficiently funded"}
                          </div>
                          <div className="text-xs md:text-sm font-bold text-[#1E293B]/70 uppercase tracking-widest leading-relaxed max-w-sm">
                             {baseResults?.monthlyGap > 0 
@@ -714,7 +714,9 @@ export default function Dashboard() {
             {/* 5. Corpus Milestone Timeline */}
             <section id="tour-milestones" className="space-y-6 overflow-hidden">
                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#1E293B] flex items-center justify-center text-lg md:text-xl shrink-0">🏆</div>
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#1E293B] flex items-center justify-center shrink-0">
+                     <Target className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  </div>
                   <h2 className="font-heading font-extrabold text-xl md:text-3xl uppercase tracking-widest leading-none">Wealth Milestones <InfoTooltip text={DASHBOARD_TIPS.milestones} /></h2>
                </div>
                
@@ -763,10 +765,10 @@ export default function Dashboard() {
                   <div className="p-6 md:p-8 space-y-6">
                      <div className="flex items-center gap-3">
                         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#F472B6]/10 flex items-center justify-center border-2 border-[#1E293B] text-lg">🤖</div>
-                        <h3 className="font-heading font-extrabold text-xl md:text-3xl text-[#1E293B] uppercase tracking-widest leading-none">AI Whisper</h3>
+                        <h3 className="font-heading font-extrabold text-xl md:text-3xl text-[#1E293B] uppercase tracking-widest leading-none">Wealth Intelligence</h3>
                      </div>
                      <p className="text-[#1E293B]/60 font-bold text-xs md:text-sm leading-relaxed">
-                        Every answer here is context-aware. I know your score is <span className="text-[#8B5CF6]">{baseResults?.score}</span> and your gap is <span className="text-[#FBBF24]">{formatIndian(baseResults?.gap)}</span>.
+                         RetireReady Intelligence is context-aware. Your Readiness Index is <span className="text-[#8B5CF6] font-black">{baseResults?.score}</span> and your wealth deficit is <span className="text-[#FBBF24] font-black">{formatIndian(baseResults?.gap)}</span>.
                      </p>
                      
                      <div className="space-y-3">
@@ -785,7 +787,7 @@ export default function Dashboard() {
                        onClick={() => navigate('/ai-copilot')}
                        className="w-full py-3.5 md:py-4 bg-[#F472B6] text-white border-2 border-[#1E293B] rounded-xl font-black uppercase tracking-widest text-xs md:text-sm pop-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#1E293B] cursor-pointer"
                      >
-                        Ask Pulse AI →
+                        Open Intelligence Suite →
                      </button>
                   </div>
                </div>

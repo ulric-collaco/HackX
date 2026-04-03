@@ -151,7 +151,7 @@ const MessageBubble = ({ role, content, timestamp }) => {
     <div className={`flex flex-col ${isAI ? 'items-start' : 'items-end'}`}>
       <div className="flex items-center gap-2 mb-1">
         <div className={`text-[9px] font-black uppercase tracking-widest text-slate-400 ${!isAI && 'text-right w-full'}`}>
-          {isAI ? 'RetireSahi AI' : 'You'} • {new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+          {isAI ? 'RetireReady Intelligence' : 'You'} • {new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </div>
       </div>
       <div
@@ -178,7 +178,7 @@ const MessageBubble = ({ role, content, timestamp }) => {
 
 const LoadingBubble = () => (
   <div className="flex flex-col items-start">
-    <div className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">RetireSahi AI is thinking...</div>
+    <div className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">RetireReady Intelligence — processing...</div>
     <div className="bg-white border-2 border-[#1E293B] rounded-[18px_18px_18px_4px] p-4 pop-shadow flex gap-1.5">
       <div className="w-2 h-2 bg-[#F472B6] rounded-full animate-[dotPulse_1s_infinite_0ms]" />
       <div className="w-2 h-2 bg-[#F472B6] rounded-full animate-[dotPulse_1s_infinite_200ms]" />
@@ -200,7 +200,7 @@ const LoadingBubble = () => (
 const StreamingBubble = ({ content }) => (
   <div className="flex flex-col items-start">
     <div className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">
-      RetireSahi AI • typing...
+      RetireReady Intelligence • composing...
     </div>
     <div
       className="max-w-[85%] md:max-w-[75%] p-4 border-2 border-[#1E293B] pop-shadow bg-white"
@@ -342,7 +342,7 @@ not "increase from RsX to RsY" since you do not know the base amount.
 `;
 
     const systemPrompt = `
-You are RetireSahi AI — a financial co-pilot for Indian NPS subscribers.
+You are RetireReady AI — a sophisticated wealth intelligence co-pilot for Indian NPS subscribers. Your role is that of a seasoned financial advisor: measured, precise, and deeply knowledgeable.
 You are speaking with ${displayData.firstName}.
 Privacy mode: ${privacyMode.toUpperCase()}
 Current year: ${new Date().getFullYear()}
@@ -370,13 +370,14 @@ At 60: 40% annuitized minimum 60% lump sum tax-free.
 80CCD(1B) old regime only extra 50000. 80CCD(2) both regimes.
 New regime 87A rebate zero tax if income under 12L.
 
-SCOPE: Answer NPS retirement tax career-affecting-NPS questions only.
-For off-topic questions pivot to one insight from their profile.
-Never answer coding recipes stocks crypto medical legal questions.
+SCOPE: Answer NPS, retirement planning, and tax-strategy questions only.
+For off-topic questions, professionally redirect with one insight from their profile.
+Never answer coding, recipes, stocks, crypto, medical, or legal questions.
 
-STYLE: Warm direct concise. Use Indian formatting Lakh Crore.
-Always use ${displayData.firstName}'s actual computed numbers.
-3-5 sentences for simple questions max 8-10 lines for complex.
+STYLE: Sophisticated, measured, and highly professional. Speak like a senior financial advisor.
+Use Indian formatting — Lakh, Crore. Prefer precise numbers.
+Always reference ${displayData.firstName}'s actual computed figures.
+3-5 sentences for simple queries; up to 10 lines for complex analysis.
 `;
 
     const chatHistory = [
@@ -458,9 +459,9 @@ Always use ${displayData.firstName}'s actual computed numbers.
               <Sparkles className="w-12 h-12 text-[#F472B6]" strokeWidth={2.5} />
             </div>
             <div className="space-y-3">
-              <h2 className="font-heading font-black text-3xl md:text-4xl text-[#1E293B]">RetireSahi AI Co-Pilot</h2>
+              <h2 className="font-heading font-black text-3xl md:text-4xl text-[#1E293B]">RetireReady Intelligence</h2>
               <p className="text-base md:text-lg font-bold text-[#1E293B]/50 uppercase tracking-widest leading-tight">
-                Hey {userData.firstName}! I'm optimized for lightning speed. Ask me anything.
+                Your wealth advisor is ready, {userData.firstName}. What would you like to examine?
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
@@ -484,7 +485,7 @@ Always use ${displayData.firstName}'s actual computed numbers.
                 <div className="bg-white border-4 border-[#1E293B] p-6 pop-shadow-pink space-y-4 rounded-2xl">
                   <div className="flex items-center gap-3">
                     <AlertCircle className="w-6 h-6 text-[#F472B6]" strokeWidth={3} />
-                    <p className="text-sm font-bold text-[#1E293B] uppercase tracking-widest">Houston, we have a problem</p>
+                    <p className="text-sm font-bold text-[#1E293B] uppercase tracking-widest">Service temporarily unavailable</p>
                   </div>
 
                   {error === 'AI_BACKEND_NOT_CONFIGURED' ? (
@@ -534,7 +535,7 @@ Always use ${displayData.firstName}'s actual computed numbers.
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              placeholder="Ask me anything..."
+              placeholder="Ask your wealth advisor..."
               className="flex-1 bg-transparent border-none outline-none text-sm md:text-lg font-bold text-[#1E293B] placeholder-slate-300"
             />
             <button

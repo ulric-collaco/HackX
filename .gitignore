@@ -1,6 +1,6 @@
-.agent/
+.agents/
 .gemini/
-
+skills-lock.json
 .env
 .env.*
 **/.env

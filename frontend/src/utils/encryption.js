@@ -1,10 +1,10 @@
-// RetireSahi Encryption Utility
+// RetireReady Encryption Utility
 // AES-256-GCM via Web Crypto API — no external libraries
 // Each user gets a unique key derived from their Firebase UID
 // Even the Firebase admin cannot decrypt this data
 
 const ALGORITHM = 'AES-GCM';
-const SALT = import.meta.env.VITE_ENCRYPTION_SALT || 'retiresahi-v1-2025';
+const SALT = import.meta.env.VITE_ENCRYPTION_SALT || 'retireready-v1-2025';
 
 // These fields are encrypted before EVERY Firestore write
 export const ENCRYPTED_FIELDS = [

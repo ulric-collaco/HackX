@@ -120,8 +120,8 @@ export default function AIPrivacyChoice({ onSelect, firstName }) {
               margin: '0 auto',
             }}
           >
-            Hey {firstName}! Before RetireSahi AI answers your questions, choose how much it knows about you.
-            Groq (our AI provider) is US-based — here is exactly what each option means.
+            Before RetireReady Intelligence answers your questions, {firstName}, choose how much context it receives.
+            Groq (our AI inference provider) is US-based — here is precisely what each option means.
           </p>
         </div>
 
@@ -556,9 +556,9 @@ export default function AIPrivacyChoice({ onSelect, firstName }) {
               margin: 0,
             }}
           >
-            <strong style={{ color: '#1E293B' }}>RetireSahi never sees your plaintext data.</strong>{' '}
-            Your financial information is encrypted on your device before storage. Neither our team nor Firebase administrators
-            can read your income, corpus, or savings — only you can. You can change this choice anytime in Settings → AI Preferences.{' '}
+            <strong style={{ color: '#1E293B' }}>RetireReady never stores your plaintext data.</strong>{' '}
+            Your financial information is encrypted on your device before it is ever written to storage. Neither our team nor Firebase administrators
+            can read your income, corpus, or savings — only you can. You may change this preference at any time in Settings → AI Preferences.{' '}
             <a href="/privacy" style={{ color: '#8B5CF6', fontWeight: 700 }} onClick={(e) => e.stopPropagation()}>
               Read our Privacy Policy →
             </a>

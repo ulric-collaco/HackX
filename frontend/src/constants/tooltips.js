@@ -8,7 +8,7 @@ export const TOUR_STEPS = [
     targetId: 'tour-score-arc',
     title: 'Your Retirement Score',
     description:
-      'This is your RetireSahi Score \u2014 a single number (0\u2013100) that tells you how ready you are for retirement. Green = great, red = needs work.',
+      'This is your RetireReady Readiness Index \u2014 a single number (0\u2013100) that quantifies your preparedness for retirement. Green = well-positioned, red = action required.',
   },
   {
     targetId: 'tour-projected-value',

@@ -1,5 +1,5 @@
 // ============================================
-// RetireSahi — Math Engine v2.0
+// RetireReady — Wealth Intelligence Engine v2.0
 // All formulas verified against PFRDA rules
 // and FY 2026-27 tax compliance
 // ============================================

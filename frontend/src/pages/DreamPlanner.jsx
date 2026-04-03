@@ -140,7 +140,7 @@ const InflationRealityCheck = ({ yearsToRetire, monthlyIncome, lifestyleMultipli
   return (
     <div className="bg-[#FBBF24] border-2 border-[#1E293B] rounded-[24px] p-8 pop-shadow flex flex-col md:flex-row items-center justify-between gap-8">
       <div className="space-y-2 text-center md:text-left">
-        <div className="text-xs font-black uppercase tracking-[3px] text-[#1E293B]">🔥 Inflation Reality Check <InfoTooltip text={DREAM_PLANNER_TIPS.inflationReality} size={12} /></div>
+        <div className="text-xs font-black uppercase tracking-[3px] text-[#1E293B]">Inflation Reality Check <InfoTooltip text={DREAM_PLANNER_TIPS.inflationReality} size={12} /></div>
         <h2 className="font-heading font-extrabold text-2xl md:text-3xl text-[#1E293B] leading-tight">
           Your {formatIndian(monthlySpendToday)}/month lifestyle today...
         </h2>
@@ -423,8 +423,8 @@ const PageContent = () => {
       {/* Toast */}
       {showToast && (
         <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
-          <div className="bg-[#FBBF24] border-2 border-[#1E293B] px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest shadow-[4px_4px_0_0_#1E293B] flex items-center gap-3">
-              🎉 Dream updated! Your dashboard reflects your new plan.
+          <div className="bg-[#1E293B] text-white border-2 border-[#1E293B] px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest pop-shadow flex items-center gap-3">
+              Dream updated. Dashboard projections recalibrated.
           </div>
         </div>
       )}

@@ -163,14 +163,14 @@ const PageContent = () => {
       setEditingSection(null);
       
       if (newScore > oldScore) {
-        showToast(`Your score improved from ${oldScore} to ${newScore}! 🎉`, 'emerald');
+        showToast(`Readiness index improved: ${oldScore} → ${newScore}.`, 'emerald');
       } else if (newScore < oldScore) {
-        showToast(`Your score dropped to ${newScore}. Check your biggest lever.`, 'pink');
+        showToast(`Readiness index declined to ${newScore}. Review your strategy.`, 'pink');
       } else {
-        showToast("Changes saved! Your dashboard has been updated.", 'amber');
+        showToast('Profile updated. Changes are reflected in your dashboard.', 'amber');
       }
     } catch {
-      showToast("Something went wrong. Please try again.", 'red');
+      showToast("System error. Please attempt the action again.", 'red');
     }
   };
 
@@ -180,9 +180,9 @@ const PageContent = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `retiresahi-data-${userData.firstName}-${Date.now()}.json`;
+    a.download = `retireready-profile-${userData.firstName}-${Date.now()}.json`;
     a.click();
-    showToast("Data exported successfully!", 'emerald');
+    showToast("Data export complete.", 'emerald');
   };
 
   const deleteAccount = async () => {
@@ -193,7 +193,7 @@ const PageContent = () => {
       await deleteUser(user);
       window.location.href = '/';
     } catch {
-      showToast("Requires recent login to delete account.", 'red');
+      showToast("Authentication state stale: requires recent login to delete account.", 'red');
       setShowDeleteModal(false);
     }
   };
@@ -590,7 +590,7 @@ const PageContent = () => {
       {/* Section 7: About */}
       <div className="text-center space-y-4 pt-8 border-t border-slate-100">
           <div className="flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-[3px] text-slate-300">
-            <Bot className="w-4 h-4" /> Developed by RetireSahi Team
+            <Bot className="w-4 h-4" /> RetireReady — Wealth Management for the Modern Professional
           </div>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
             <a href="#" className="hover:text-[#8B5CF6] transition-colors flex items-center gap-1">Methodology <ExternalLink className="w-3 h-3" /></a>
@@ -618,9 +618,9 @@ const PageContent = () => {
               <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-red-500 shadow-[4px_4px_0_0_#EF4444]">
                   <Trash2 className="w-10 h-10 text-red-500" strokeWidth={2.5} />
               </div>
-              <h2 className="font-heading font-black text-3xl text-[#1E293B] text-center mb-4">Are you absolutely sure?</h2>
+              <h2 className="font-heading font-black text-3xl text-[#1E293B] text-center mb-4">Confirm permanent deletion.</h2>
               <p className="text-center text-slate-500 font-bold mb-10 leading-relaxed uppercase text-[10px] tracking-widest">
-                  This will permanently delete your financial profile, score history, and tax analysis. This action cannot be undone.
+                  This will irreversibly delete your financial profile, readiness history, and tax analysis. This action cannot be undone.
               </p>
               <div className="grid grid-cols-2 gap-4">
                   <button 

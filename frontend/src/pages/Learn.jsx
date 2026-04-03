@@ -100,7 +100,7 @@ export default function Learn() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    document.title = "RetireSahi | Know Your NPS";
+    document.title = "RetireReady | NPS Intelligence Hub";
     const unsub = onAuthStateChanged(auth, setUser);
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -171,7 +171,7 @@ export default function Learn() {
             <div className="w-10 h-10 bg-[#8B5CF6] border-2 border-[#1E293B] rounded-full flex items-center justify-center pop-shadow">
               <span className="font-heading font-extrabold text-white text-xl">R</span>
             </div>
-            <span className="font-heading font-extrabold text-2xl tracking-tight hidden sm:block">RetireSahi</span>
+            <span className="font-heading font-extrabold text-2xl tracking-tight hidden sm:block">RetireReady</span>
           </div>
           
           <div className="hidden md:flex gap-8 font-bold uppercase tracking-wide text-sm items-center">
@@ -521,7 +521,7 @@ export default function Learn() {
                <div className="w-10 h-10 bg-[#8B5CF6] border-2 border-white rounded-full flex items-center justify-center">
                   <span className="font-heading font-extrabold text-white text-xl">R</span>
                </div>
-               <span className="font-heading font-extrabold text-2xl tracking-tight">RetireSahi</span>
+               <span className="font-heading font-extrabold text-2xl tracking-tight">RetireReady</span>
             </div>
             
             <div className="flex flex-wrap justify-center gap-8 font-bold uppercase tracking-widest text-xs">
@@ -532,7 +532,7 @@ export default function Learn() {
             </div>
 
             <div className="text-white/40 font-bold uppercase tracking-widest text-[9px]">
-               © 2025 RetireSahi. Built for India's Future.
+               © 2025 RetireReady. Wealth Management for the Modern Professional.
             </div>
          </div>
       </footer>

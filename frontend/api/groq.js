@@ -2,7 +2,7 @@ import { initializeApp, cert, getApps } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = 'openai/gpt-oss-120b';
+const MODEL = 'llama3-70b-8192';
 const MAX_MESSAGES = 12;
 const MAX_CHARS_PER_MESSAGE = 6000;
 
